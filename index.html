@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta name="facebook-domain-verification" content="vozz9sq6z4itrl9xupvimqu7v2im82" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Meta Pixel Code -->
   <script>
     !function (f, b, e, v, n, t, s) {
@@ -483,6 +483,10 @@
     /* height: 200px; Adjust height as needed */
     object-fit: cover;
   }
+  option
+  {
+    margin: 10px;
+  }
   </style>
   <script src="./script.js"></script>
   <script>
@@ -504,6 +508,13 @@
       document.getElementById("floor_plan").style.display = "none";
     }
 
+    function  showPriceBreakdown()
+    {
+      var popupSection = document.getElementById('popup');
+
+// Make the popup section visible
+popupSection.style.display = 'block';
+    }
   </script>
 </head>
 
@@ -540,11 +551,7 @@
                     Amenities
                   </a>
                 </li>
-                <li>
-                  <a class="text-white" href="#infrastructure">
-                    Infrastructure
-                  </a>
-                </li>
+               
                 <li>
                   <a class="text-white" href="#offering">
                     Offering
@@ -560,11 +567,7 @@
                     Location
                   </a>
                 </li>
-                <li>
-                  <a class="text-white" href="tel:08037835621">
-                    08037835621
-                  </a>
-                </li>
+              
               </ul>
             </nav>
           </div>
@@ -583,7 +586,7 @@
           class="h-full w-full object-cover" />
       </div>
       <button
-        class="popup-btn fixed top-1/2 right-0 -translate-y-1/2 inline-block rounded bg-red px-12 py-3 text-sm font-medium text-white transition hover:bg-amber-950 focus:outline-none">
+        class="popup-btn fixed top-1/2 -rotate-90 right-[-4rem] inline-block rounded bg-red px-12 py-3 text-sm font-medium text-white transition hover:bg-amber-950 focus:outline-none">
         Enquire Now
       </button>
     </section>
@@ -704,43 +707,43 @@
             <td>3 BHK</td>
             <td>1084 Sq.Ft.</td>
             <td>₹ 1.44 Cr</td>
-            <td><button class="price-breakdown" onclick="showPriceBreakdown(1)">Price Breakdown</button></td>
+            <td><button class="price-breakdown" onclick="showPriceBreakdown()">Price Breakdown</button></td>
           </tr>
           <tr>
             <td>3 BHK</td>
             <td>1138 Sq.Ft.</td>
             <td>₹ 1.54 Cr</td>
-            <td><button class="price-breakdown" onclick="showPriceBreakdown(2)">Price Breakdown</button></td>
+            <td><button class="price-breakdown" onclick="showPriceBreakdown()">Price Breakdown</button></td>
           </tr>
           <tr>
             <td>3 BHK</td>
             <td>1190 Sq.Ft.</td>
             <td>₹ 1.65 Cr</td>
-            <td><button class="price-breakdown" onclick="showPriceBreakdown(3)">Price Breakdown</button></td>
+            <td><button class="price-breakdown" onclick="showPriceBreakdown()">Price Breakdown</button></td>
           </tr>
           <tr>
             <td>3 BHK</td>
             <td>1417 Sq.Ft.</td>
             <td>₹ 1.99 Cr</td>
-            <td><button class="price-breakdown" onclick="showPriceBreakdown(4)">Price Breakdown</button></td>
+            <td><button class="price-breakdown" onclick="showPriceBreakdown()">Price Breakdown</button></td>
           </tr>
           <tr>
             <td>3 BHK Duplex</td>
             <td>1168 Sq.Ft.</td>
             <td>₹ 1.70 Cr</td>
-            <td><button class="price-breakdown" onclick="showPriceBreakdown(5) ">Price Breakdown</button></td>
+            <td><button class="price-breakdown" onclick="showPriceBreakdown() ">Price Breakdown</button></td>
           </tr>
           <tr>
             <td>3.5 BHK Duplex</td>
             <td>1358 Sq.Ft.</td>
             <td>₹ 1.95 Cr</td>
-            <td><button class="price-breakdown" onclick="showPriceBreakdown(6)">Price Breakdown</button></td>
+            <td><button class="price-breakdown" onclick="showPriceBreakdown()">Price Breakdown</button></td>
           </tr>
           <tr>
             <td>4 BHK</td>
             <td>2290 Sq.Ft.</td>
             <td>₹ 2.95 Cr</td>
-            <td><button class="price-breakdown" onclick="showPriceBreakdown(2)">Price Breakdown</button></td>
+            <td><button class="price-breakdown" onclick="showPriceBreakdown()">Price Breakdown</button></td>
           </tr>
         </tbody>
       </table>
@@ -823,7 +826,7 @@
     </section>
 
 
-<section>
+<section id="offering">
     <div class="flex flex-col items-center max-w-sm sm:max-w-7xl mx-auto">
       <h3 style="font-weight: 500; margin-top: 5vh; display: inline-block; width: 100%;"
       class="text-4xl text-center py-0">PEEK INTO <span class="text-red-600">RIVERDALE GRAND </span></h3><div class="flex flex-row gap-4 sm:gap-8 my-7">
@@ -1086,7 +1089,7 @@
     <!-- Footer -->
     <footer class="bg-black flex justify-center">
       <div class="mx-auto max-w-screen-2xl px-4 py-4 sm:px-6 lg:px-8 text-white">
-        © Copyright 2024 Riverdale Grand and Grove | SEO & Design by TM Digital | Disclaimer
+        © Copyright 2024 Riverdale Grand | Disclaimer
       </div>
     </footer>
 
@@ -1122,6 +1125,18 @@
             <input name="name" class="w-full rounded-lg border border-gray-200 p-3 text-sm" placeholder="Name"
               type="text" id="name" required="true" />
           </div>
+
+          <div>
+            <label class="sr-only" for="name">Configuration</label>
+            <select name="configuration" id="duplex" val class="w-full rounded-lg border border-gray-200 p-3 text-sm">
+              <option value="" disabled selected>Select Configuration</option>
+              <option value="3duplex">3 Duplex</option>
+              <option value="3.5duplex">3.5 Duplex</option>
+              <option value="4duplex">4 Duplex</option>
+              <option value="4.5duplex">4.5 Duplex</option>
+            </select>
+          </div>
+
 
           <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
